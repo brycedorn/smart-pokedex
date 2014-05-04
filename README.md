@@ -7,9 +7,17 @@
 ## Timeline
 
 Todo:
- - Retrieve text from each Pokemon's wiki page
- - Retrieve info from each Pokemon's entry in pokeapi
- - Organize this data into easily accessible system (usable by search engine)
+ - Get lunr working with small amount of data
+  - Keyword searching
+  - List of results
+  - Retrieve text from each Pokemon's wiki page
+  - [x] Retrieve info from each Pokemon's entry in pokeapi
+ 
+ - Make template for pokemon result page
+  - Top result is returned if within threshold (>0.7 or so)
+
+ - Each pokemon should have a page (after searching for it)
+  - Populate with info from http://pokemondb.net/pokedex/{name}
 
 ## Installation
 
