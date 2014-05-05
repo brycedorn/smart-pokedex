@@ -54,7 +54,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* normalize.css v3.0.0 | MIT License | git.io/normalize */
+/*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -6371,13 +6371,6 @@ button.close {
     display: none !important;
   }
 }
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
-}
-
 /* Space out content a bit */
 body {
   padding-top: 20px;
@@ -6385,15 +6378,16 @@ body {
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
+.header, .marketing, .footer {
   padding-left: 15px;
   padding-right: 15px;
 }
 
 /* Nav pills */
-.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+.nav-pills > li.active > a {
+  background-color: #d9534f;
+}
+.nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
   background-color: #d9534f;
 }
 
@@ -6401,8 +6395,6 @@ body {
 .header {
   border-bottom: 1px solid #e5e5e5;
 }
-
-/* Make the masthead heading the same height as the navigation */
 .header h3 {
   margin-top: 0;
   margin-bottom: 0;
@@ -6410,8 +6402,21 @@ body {
   padding-bottom: 19px;
 }
 
-.search {
+/* Make the masthead heading the same height as the navigation */
+#search {
   margin: 20px 0;
+  padding: 30px 16px;
+}
+
+input[type="search"]:focus {
+  border-color: rgba(255, 0, 0, 0.6);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(255, 0, 0, 0.4);
+  outline: 0 none;
+}
+
+.form-control {
+  border-radius: 20px;
+  font-size: 1.4em;
 }
 
 /* Custom page footer */
@@ -6430,7 +6435,6 @@ body {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
 }
-
 .jumbotron .btn {
   font-size: 21px;
   padding: 50px 24px;
@@ -6441,7 +6445,6 @@ body {
 .marketing {
   margin: 40px 0;
 }
-
 .marketing p + h4 {
   margin-top: 28px;
 }
@@ -6450,7 +6453,6 @@ body {
 a {
   color: #d9534f;
 }
-
 a:hover {
   color: #d43f3a;
 }
@@ -6462,9 +6464,7 @@ a:hover {
   }
 
   /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
+  .header, .marketing, .footer {
     padding-left: 0;
     padding-right: 0;
   }
