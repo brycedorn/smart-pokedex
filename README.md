@@ -12,6 +12,9 @@ Todo:
   - List of results
   - Retrieve text from each Pokemon's wiki page
   - [x] Retrieve info from each Pokemon's entry in pokeapi
+
+ - Voice recognition for search
+  - https://www.talater.com/annyang/
  
  - Make template for pokemon result page
   - Top result is returned if within threshold (>0.7 or so)
