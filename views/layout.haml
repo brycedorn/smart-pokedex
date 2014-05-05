@@ -11,13 +11,15 @@
     %link{:href=>"../images/favicon.ico", :rel => "shortcut icon"}
 
     / PROD
-    %script{:type => "text/javascript", :src => "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"}
-    %script{:type => "text/javascript", :src => "//cdnjs.cloudflare.com/ajax/libs/lunr.js/0.5.2/lunr.min.js"}
+    / %script{:type => "text/javascript", :src => "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"}
+    / %script{:type => "text/javascript", :src => "//cdnjs.cloudflare.com/ajax/libs/lunr.js/0.5.2/lunr.min.js"}
+    / %script{:type => "text/javascript", :src => "//cdnjs.cloudflare.com/ajax/libs/annyang/1.1.0/annyang.min.js"}
     / PROD
 
     / DEV
     %script{:type => "text/javascript", :src => "/javascripts/lib/jquery.min.js"}
-    %script{:type => "text/javascript", :src => "/javascripts/lib/lunr.js"}
+    %script{:type => "text/javascript", :src => "/javascripts/lib/lunr.min.js"}
+    %script{:type => "text/javascript", :src => "/javascripts/lib/annyang.min.js"}
     / DEV
 
     / LOCAL
@@ -29,13 +31,11 @@
     .container
       .header
         %ul.nav.nav-pills.pull-right
-          %li.active
-            %a{href: "#"} Home
-          %li
-            %a{href: "#"} About
-          %li
-            %a{href: "#"} Search
-          %li
-            %a{href: "#"} Contact
+          %li.home.active
+            %a{href: "/"} Home
+          %li.about
+            %a{href: "/about"} About
+          %li.contact
+            %a{href: "/contact"} Contact
         %h3.text-muted Smart Pokédex
       = yield
