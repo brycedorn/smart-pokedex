@@ -34,7 +34,7 @@ function randomize_placeholder() {
 
 function apply_active_nav() {
   var url = document.URL;
-  var nav = ['contact','about'];
+  var nav = ['contact','data','about'];
   $.each(nav,function(i,val) { 
     var changed = false;
     $('li.active').removeClass('active');
