@@ -44,8 +44,60 @@ box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(255, 0, 0, 0.4);
 outline: 0 none;
 }
 .form-control {
-  border-radius: 20px;
+  border-radius: 10px;
   font-size: 1.4em;
+}
+
+/* Hide result before we have it */
+#result {
+  border-top: rgba(0,0,0,0.1) solid 1px;
+  margin-top: 20px;
+  display: none;
+  text-align: left;
+
+  h1, h3, img {
+    text-align: center;
+  }
+  h2 {
+    margin: 10px 0 0 0;
+  }
+  .pokeimg {
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  img {
+    width: 100%;
+  }
+  .accuracy {
+    opacity: 0.5;
+    display: inline-block;
+    margin: 4px;
+  }
+  .table {
+    .types {
+      text-transform: capitalize;
+    }
+  }
+  #runnersup {
+    border-top: rgba(0,0,0,0.1) solid 1px;
+    border-bottom: rgba(0,0,0,0.1) solid 1px;
+    padding-bottom: 20px;
+    p {
+      margin: 0;
+      &.accuracy {
+        font-size: 1.2em;
+      }
+    }
+  }
+  #feedback {
+    text-align: center;
+    margin-top: 40px;
+    p,h4 {
+      font-size: 1.2em;
+      display: inline-block;
+    }
+  }
 }
 
 /* Custom page footer */
@@ -70,8 +122,8 @@ outline: 0 none;
   }
 }
 
-/* Supporting marketing content */
-.marketing {
+/* Clean up row content */
+.clean {
   margin: 40px 0;
   p + h4 {
     margin-top: 28px;
@@ -103,5 +155,8 @@ a {
   /* Remove the bottom border on the jumbotron for visual effect */  
   .jumbotron {
     border-bottom: 0;
+  }
+  #result h2 {
+    margin-top: 0;
   }
 }

@@ -6415,8 +6415,57 @@ input[type="search"]:focus {
 }
 
 .form-control {
-  border-radius: 20px;
+  border-radius: 10px;
   font-size: 1.4em;
+}
+
+/* Hide result before we have it */
+#result {
+  border-top: rgba(0, 0, 0, 0.1) solid 1px;
+  margin-top: 20px;
+  display: none;
+  text-align: left;
+}
+#result h1, #result h3, #result img {
+  text-align: center;
+}
+#result h2 {
+  margin: 10px 0 0 0;
+}
+#result .pokeimg {
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+}
+#result img {
+  width: 100%;
+}
+#result .accuracy {
+  opacity: 0.5;
+  display: inline-block;
+  margin: 4px;
+}
+#result .table .types {
+  text-transform: capitalize;
+}
+#result #runnersup {
+  border-top: rgba(0, 0, 0, 0.1) solid 1px;
+  border-bottom: rgba(0, 0, 0, 0.1) solid 1px;
+  padding-bottom: 20px;
+}
+#result #runnersup p {
+  margin: 0;
+}
+#result #runnersup p.accuracy {
+  font-size: 1.2em;
+}
+#result #feedback {
+  text-align: center;
+  margin-top: 40px;
+}
+#result #feedback p, #result #feedback h4 {
+  font-size: 1.2em;
+  display: inline-block;
 }
 
 /* Custom page footer */
@@ -6441,11 +6490,11 @@ input[type="search"]:focus {
   border-radius: 50%;
 }
 
-/* Supporting marketing content */
-.marketing {
+/* Clean up row content */
+.clean {
   margin: 40px 0;
 }
-.marketing p + h4 {
+.clean p + h4 {
   margin-top: 28px;
 }
 
@@ -6477,5 +6526,9 @@ a:hover {
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
+  }
+
+  #result h2 {
+    margin-top: 0;
   }
 }
