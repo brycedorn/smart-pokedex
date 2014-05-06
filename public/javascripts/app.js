@@ -6,19 +6,31 @@
 $(document).ready(function() {
   apply_active_nav();
 
-  if (annyang && !jQuery.browser.mobile) {
-    var commands = {
-      'do a search': function() { $('#enter')[0].click(); }
-    };
+  randomize_placeholder();
 
-    // Add our commands to annyang
-    annyang.addCommands(commands);
-
-    // Start listening.
-    annyang.start();
+  if (annyang && !jQuery.browser.mobile && false) {
+    enable_voice();
   }
 });
 
+function enable_voice() {
+  var commands = {
+    'do a search': function() { $('#enter')[0].click(); }
+  };
+
+  // Add our commands to annyang
+  annyang.addCommands(commands);
+
+  // Start listening.
+  annyang.start();
+}
+
+function randomize_placeholder() {
+  var example_array = ['The little yellow mouse thing','The weird ball of vines','The fat sleepy one','The dumb pink one','The one that looks like a giant Pokéball','The drooling plant thing'];
+  if($("#search")) {
+    $("#search").attr('placeholder',example_array[ Math.floor( Math.random()*example_array.length ) ]+'...');
+  }
+}
 
 function apply_active_nav() {
   var url = document.URL;
