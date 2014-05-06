@@ -66,8 +66,8 @@ function do_search(num_pokemon) {
 
   // Load locally serialized index
   // `test` is full lunr index, `sm` is partition of 30
-  var index = lunr.Index.load(sm);
-  console.log(index);
+  // var index = lunr.Index.load(sm);
+  var index = local_storage(151);
 
   // Do the search
   var query = $("#search").val();
