@@ -1,4 +1,4 @@
-import json, pykemon, re
+import json, pykemon, re, os
 
 data_json = []
 
@@ -25,3 +25,5 @@ formatted = re.sub(r'}},{', '},', formatted )
 formatted = re.sub(r'}}}', '}}', formatted )
 
 open("data.js", "w").write("var poke_data = " + re.sub(r'abilities', '"abilities',formatted) +";")
+
+os.remove("data.json")

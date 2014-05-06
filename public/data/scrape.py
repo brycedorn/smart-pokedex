@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-import urllib2, json, re
+import urllib2, json, re, os
 
 # Global vars
 base_url = "http://bulbapedia.bulbagarden.net"
@@ -51,3 +51,5 @@ with open('scrape.json', 'w') as outfile:
   json.dump(wiki_json, outfile)
 
 open("scrape.js", "w").write("var wiki_data = " + open("scrape.json").read() + ";")
+
+os.remove("scrape.json")
