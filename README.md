@@ -7,11 +7,19 @@
 ## Timeline
 
 Todo:
- - Get lunr working with small amount of data
+  - Parse data into lunr
+   - Each 'Pokemon' should be a document with:
+     - Raw wiki data
+     - Pokeapi entry
+    - Parse both as raw text?
+     - Apply tokenizer to raw strings
+     - Apply trimmer, stemmer & stopword filter
+     - Add document for both
+
   - Keyword searching
    - Use tokenizer
-  - List of results
-  - Retrieve text from each Pokemon's wiki page
+  - Top result and 3 of next-relevant results
+  - [x] Retrieve text from each Pokemon's wiki page
   - [x] Retrieve info from each Pokemon's entry in pokeapi
 
  - [x] Voice recognition for search
