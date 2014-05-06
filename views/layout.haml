@@ -9,19 +9,24 @@
     %link{:href=>"../images/favicon.ico", :rel => "shortcut icon"}
 
     / PROD
-    / %script{:type => "text/javascript", :src => "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"}
-    / %script{:type => "text/javascript", :src => "//cdnjs.cloudflare.com/ajax/libs/lunr.js/0.5.2/lunr.min.js"}
-    / %script{:type => "text/javascript", :src => "//cdnjs.cloudflare.com/ajax/libs/annyang/1.1.0/annyang.min.js"}
+    %script{:type => "text/javascript", :src => "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"}
+    %script{:type => "text/javascript", :src => "//cdnjs.cloudflare.com/ajax/libs/lunr.js/0.5.2/lunr.min.js"}
+    %script{:type => "text/javascript", :src => "//cdnjs.cloudflare.com/ajax/libs/zclip/1.1.2/jquery.zclip.min.js"}
+    %script{:type => "text/javascript", :src => "//cdnjs.cloudflare.com/ajax/libs/annyang/1.1.0/annyang.min.js"}
     / PROD
 
     / DEV
-    %script{:type => "text/javascript", :src => "/javascripts/lib/jquery.min.js"}
-    %script{:type => "text/javascript", :src => "/javascripts/lib/lunr.min.js"}
-    %script{:type => "text/javascript", :src => "/javascripts/lib/annyang.min.js"}
+    / %script{:type => "text/javascript", :src => "/javascripts/lib/jquery.min.js"}
+    / %script{:type => "text/javascript", :src => "/javascripts/lib/lunr.min.js"}
+    / %script{:type => "text/javascript", :src => "/javascripts/lib/zclip.min.js"}
+    / %script{:type => "text/javascript", :src => "/javascripts/lib/annyang.min.js"}
     / DEV
 
     / LOCAL
     %script{:type => "text/javascript", :src => "/data/data.js"}
+    %script{:type => "text/javascript", :src => "/data/scrape.js"}
+    / %script{:type => "text/javascript", :src => "/data/lg_test.js"}
+    %script{:type => "text/javascript", :src => "/data/sm_test.js"}
     %script{:type => "text/javascript", :src => "/javascripts/search.js"}
     %script{:type => "text/javascript", :src => "/javascripts/app.js"}
     / LOCAL
@@ -33,6 +38,8 @@
         %ul.nav.nav-pills.pull-right
           %li.home.active
             %a{href: "/"} Home
+          %li.data
+            %a{href: "/data"} Data
           %li.about
             %a{href: "/about"} About
           %li.contact
