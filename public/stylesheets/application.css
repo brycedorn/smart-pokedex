@@ -2704,11 +2704,28 @@ input[type="search"]:focus {
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .jumbotron .btn {
   font-size: 21px;
-  padding: 50px 24px;
+  padding-top: 56px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
+  display: inline-block;
+}
+.jumbotron .btn#enter {
+  margin-top: 12px;
+}
+.jumbotron #timer {
+  padding: 10px;
+}
+
+/* Fade effect */
+.invisible {
+  display: none;
 }
 
 /* Clean up row content */
@@ -2725,6 +2742,20 @@ a {
 }
 a:hover {
   color: #d43f3a;
+}
+
+/* Data */
+#local .btn {
+  width: 100px;
+  height: 100px;
+  padding-top: 34px;
+}
+#local .btn#download {
+  margin-top: 20px;
+}
+#local textarea {
+  width: 100%;
+  height: 400px;
 }
 
 /* Responsive: Portrait tablets and up */
