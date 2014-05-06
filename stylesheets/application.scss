@@ -1,6 +1,17 @@
 @import "compass/reset";
-@import "bootstrap";
+// @import "bootstrap";
+@import "bootstrap/mixins";
 @import "bootstrap/variables";
+@import "bootstrap/breadcrumbs";
+@import "bootstrap/grid";
+@import "bootstrap/forms";
+@import "bootstrap/navs";
+@import "bootstrap/tables";
+@import "bootstrap/jumbotron";
+@import "bootstrap/buttons";
+@import "bootstrap/scaffolding";
+@import "bootstrap/utilities";
+@import "bootstrap/type";
 
 /* Space out content a bit */
 body {
@@ -57,6 +68,10 @@ outline: 0 none;
 
   h1, h3, img {
     text-align: center;
+
+    &#caption {
+      opacity: 0.4;
+    }
   }
   h2 {
     margin: 10px 0 0 0;
