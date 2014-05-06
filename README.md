@@ -9,18 +9,19 @@
 Todo:
  - Get lunr working with small amount of data
   - Keyword searching
+   - Use tokenizer
   - List of results
   - Retrieve text from each Pokemon's wiki page
   - [x] Retrieve info from each Pokemon's entry in pokeapi
 
- - Voice recognition for search
-  - https://www.talater.com/annyang/
+ - [x] Voice recognition for search
+  - Just need to add javascript to enable
  
- - Make template for pokemon result page
-  - Top result is returned if within threshold (>0.7 or so)
+ - [x] Make template for pokemon result page
+  - [x] Top result is returned if within threshold (>0.7 or so)
 
- - Each pokemon should have a page (after searching for it)
-  - Populate with info from http://pokemondb.net/pokedex/{name}
+ - [x] Each pokemon should have a page (after searching for it)
+  - [x] Populate with info from http://pokemondb.net/pokedex/{name}
 
 ## Installation
 
@@ -28,20 +29,9 @@ Todo:
 
 ## Running app
 
-Start the app by running:
-
     rake s
 
-This rake command runs `bundle exec shotgun config.ru` behind the scenes for you and starts the app on port 6969 and will now be able to view the application in your web browser at this URL [http://localhost:6969](http://localhost:6969).
-
-## Rake Tasks
-
-    rake -T
-
-    rake css:clear         # Clear the CSS
-    rake css:compile       # Compile CSS
-    rake css:compile:prod  # Compile CSS for production
-    rake s                 # Run the app
+And that's it! [http://localhost:6969](http://localhost:6969).
 
 ## License
 
