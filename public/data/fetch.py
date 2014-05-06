@@ -2,12 +2,13 @@ import json, pykemon, re, os
 
 data_json = []
 
-for x in range(1, 20): # 778 pokemon
+for x in range(1, 718): # 778 pokemon
   data = pykemon.get(pokemon_id=int(x))
   data = json.dumps(data, default=lambda o: o.__dict__, sort_keys=True, indent=0)
   # Formatting
   data = str(x)+"\": {"+ data + "}"
   data_json.append(data)
+  print ("========= POKEMON "+str(x)+" COMPLETE, MOVING ON ========")
 
 with open('data.json', 'w') as outfile:
   json.dump(data_json, outfile)
