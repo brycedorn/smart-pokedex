@@ -4,8 +4,6 @@
 // Array of wiki jargon for ID of pokemon
 // wiki_data = {"<a href="ehe">the pokemon</a>..."} , ...
 
-// Global vars
-var indexed = false;
 
 // Index data in lunr
 function local_storage(num_items) {
@@ -62,6 +60,11 @@ $(document).ready(function() {
 // });
 
 
+// Pre-fetch for now
+var index = local_storage(151);
+
+
+
 // Search function
 // Params : num_pokemon - the number of pokemon to add to lunr index
 function do_search(num_pokemon) {
@@ -69,8 +72,6 @@ function do_search(num_pokemon) {
   // Load locally serialized index
   // `test` is full lunr index, `sm` is partition of 30
   // var index = lunr.Index.load(sm);
-  if(!indexed) var index = local_storage(151);
-  indexed = true;
 
   // Do the search
   var query = $("#search").val();
