@@ -7,17 +7,23 @@
 ## Timeline
 
 Todo:
-  - Parse data into lunr
-   - Each 'Pokemon' should be a document with:
-     - Raw wiki data
-     - Pokeapi entry
-    - Parse both as raw text?
-     - Apply tokenizer to raw strings
-     - Apply trimmer, stemmer & stopword filter
-     - Add document for both
+  - Optimize
+   - Local storage of index
+   - Somehow make it server-side
 
-  - Keyword searching
-   - Use tokenizer
+  - Normalize scores
+  
+  - [x] Parse data into lunr
+   - [x] Each 'Pokemon' should be a document with:
+     - [x] Raw wiki data
+     - [x] Pokeapi entry
+    - [x] Parse both as raw text?
+     - [x] Apply tokenizer to raw strings
+     - [x] Apply trimmer, stemmer & stopword filter
+     - [x] Add document for both
+
+  - [x] Keyword searching
+   - [x] Use tokenizer
   - Top result and 3 of next-relevant results
   - [x] Retrieve text from each Pokemon's wiki page
   - [x] Retrieve info from each Pokemon's entry in pokeapi
