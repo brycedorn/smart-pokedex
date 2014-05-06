@@ -1,7 +1,10 @@
 .jumbotron
   %h1 Smart Pokédex
+  %h4
+    %p A final project for CS410, Text Information Systems led by Chengxiang Zhai, UIUC Spring '14
+  %br
   %h2 Features
-  .row.marketing
+  .row.clean
     .col-lg-6
       %h4 Massive Dataset
       %p All attributes and Bulbapedia entries indexed for each of the 778 Pokémon ever created.
@@ -14,4 +17,18 @@
     .col-lg-6
       %h4 Mobile-ready webapp
       %p Use Smart Pokédex on-the-go!
+  %h2 Special Thanks
+  .row.clean
+    .col-lg-6
+      %h4 Pokéapi and Pykemon
+      %p Used for attribute aggregation, thanks to Pykemon for simple calls via Python.
+    .col-lg-6
+      %h4 Bulbapedia
+      %p Encyclopedia entries indexed for more precision and breadth of data and information.
+    .col-lg-6
+      %h4 Sinatra, lunr.js
+      %p Uses a simple Ruby backend with javascript searching library.
+    .col-lg-6
+      %h4 Twitter Bootstrap-sass
+      %p Makes everything look nicer.
 = haml :footer

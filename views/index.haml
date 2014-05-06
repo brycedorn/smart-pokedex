@@ -1,7 +1,55 @@
 .jumbotron
-  %h1 Smart Pokédex
-  %p.lead
-    %input.form-control#search{type: "search"}
-  %p
-    %a.btn.btn-lg.btn-danger#enter{href: "/about"} Let's go!
+  #landing
+    %h1 Smart Pokédex
+    %p.lead
+      %input.form-control#search{type: "search", placeholder: ""}
+    %p
+      %a.btn.btn-lg.btn-danger#enter{href: "#result" } Let's go!
+  #result
+    %h3 Did you mean...
+    .row.clean
+      .col-lg-6.col-md-6.col-sm-6
+        .pokeimg
+          %img#ret_img{src: "http://img.pokemondb.net/artwork/bulbasaur.jpg" }
+      .col-lg-6.col-md-6.col-sm-6
+        %h2#ret_name Bulbasaur
+        %p#ret_acc.accuracy 24.3% accuracy
+        %table.table.table-bordered#ret_stats
+          %tr
+            %td National №
+            %td 001
+          %tr
+            %td Type
+            %td.types Grass / Poison
+          %tr
+            %td HP
+            %td 10
+          %tr
+            %td Height
+            %td 2′4″ (0.71m)
+          %tr
+            %td Weight
+            %td 100lb
+    .row.clean#runnersup
+      %h3 Top 3 runners up
+      .col-lg-4.col-md-4.col-sm-4.col-xs-4
+        .pokeimg
+          %img{src: "http://img.pokemondb.net/artwork/bulbasaur.jpg" }
+        %p First
+        %p.accuracy 10.6% accuracy
+      .col-lg-4.col-md-4.col-sm-4.col-xs-4
+        .pokeimg
+          %img{src: "http://img.pokemondb.net/artwork/bulbasaur.jpg" }
+        %p Second
+        %p.accuracy 3.7% accuracy
+      .col-lg-4.col-md-4.col-sm-4.col-xs-4
+        .pokeimg
+          %img{src: "http://img.pokemondb.net/artwork/bulbasaur.jpg" }
+        %p Third
+        %p.accuracy 0.3% accuracy
+    #feedback
+      %p 
+        Was this horribly wrong? 
+        %a{href: "/contact" } Please let us know!
+
 = haml :footer
