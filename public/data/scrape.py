@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-import urllib2
+import urllib2, json, re
 
 # Global vars
 base_url = "http://bulbapedia.bulbagarden.net"
@@ -29,6 +29,7 @@ for table in tables:
 #Now iterate through those URLs and populate array of text corresponding to IDs
 
 wiki_json = []
+x = 0
 for url in poke_urls:
   req = urllib2.Request(base_url+url,headers=header)
   page = urllib2.urlopen(req)
@@ -41,11 +42,12 @@ for url in poke_urls:
   for row in content.findAll("p"):
     ugly_content += row
 
-  wiki_json.append(str(ugly_content))
-  print "Appending "+ugly_content
-
+  ugly_tokens = str(ugly_content).split(' ')
+  wiki_json.append(ugly_tokens)
+  print ("========= "+url+" COMPLETE, MOVING ON TO POKEMON "+str(x)+ " ========")
+  x += 1
 
 with open('scrape.json', 'w') as outfile:
   json.dump(wiki_json, outfile)
 
-open("scrape.js", "w").write("var wiki_data = " + open("data.json").read()+";")
+open("scrape.js", "w").write("var wiki_data = " + open("scrape.json").read() + ";")
