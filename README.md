@@ -8,12 +8,19 @@
 
 Todo:
   - Optimize!
-   - Local storage of index
-   - Somehow make it server-side
 
-  - Normalize scores
+  - Find out what exactly a document looks like 
+   - Tweak weight for API/words
+   - Look for other libraries
+
+  - If we could maybe find one more (or more) datasets to add to documents would improve
+   - Get all pokedex entries
+
+  - Normalize accuracy scores
 
   - Initial page load with spinning gif
+
+  - Search bar stay at top for consecutive searches
 
   - [x] Add 'no results' thing instead of alert
   
