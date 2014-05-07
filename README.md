@@ -7,11 +7,15 @@
 ## Timeline
 
 Todo:
-  - Optimize
+  - Optimize!
    - Local storage of index
    - Somehow make it server-side
 
   - Normalize scores
+
+  - Initial page load with spinning gif
+
+  - [x] Add 'no results' thing instead of alert
   
   - [x] Parse data into lunr
    - [x] Each 'Pokemon' should be a document with:
