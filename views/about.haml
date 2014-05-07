@@ -4,31 +4,42 @@
     %p A final project for CS410, Text Information Systems led by Chengxiang Zhai, UIUC Spring '14
   %br
   %h2 Features
-  .row.clean
+  .row.clean.thanks
     .col-lg-6
       %h4 Massive Dataset
-      %p All attributes and Bulbapedia entries indexed for each of the 778 Pokémon ever created.
+      %p All Pokéapi, Pokédex and Bulbapedia entries indexed for every Pokémon.
+    .col-lg-6
+      %h4 
+        %a{href: "http://www.sinatrarb.com/"} Sinatra 
+        &
+        %a{href: "http://lunrjs.com/"} lunr.js
+      %p Ruby in the back with lunr's javascript full-text search in the front.
     .col-lg-6
       %h4 Keyword Searching
       %p Find the Pokémon you're thinking of by simply telling the Pokédex as much as you can remember.
     .col-lg-6
-      %h4 Voice Recognition
-      %p Search the Pokédex with simple voice commands using annyang.js.
-    .col-lg-6
       %h4 Mobile-ready webapp
-      %p Use Smart Pokédex on-the-go!
+      %p Take your Smart Pokédex on-the-go!
   %h2 Special Thanks
   .row.clean
     .col-lg-6
-      %h4 Pokéapi and Pykemon
-      %p Used for attribute aggregation, thanks to Pykemon for simple calls via Python.
+      %h4 
+        %a{href: "http://pokeapi.co/"} Pokéapi
+        & 
+        %a{href: "https://github.com/phalt/pykemon"} Pykemon
+      %p API for attribute aggregation, Pykemon for simple calls via Python.
     .col-lg-6
-      %h4 Bulbapedia
-      %p Encyclopedia entries indexed for more precision and breadth of data and information.
+      %h4
+        %a{href: "http://www.crummy.com/software/BeautifulSoup/"} BeautifulSoup
+      %p Awesome Python library for scraping text from online data sources.
     .col-lg-6
-      %h4 Sinatra, lunr.js
-      %p Uses a simple Ruby backend with javascript searching library.
+      %h4 
+        %a{href: "http://bulbapedia.bulbagarden.net/wiki/Main_Page"} Bulbapedia 
+        &
+        %a{href: "http://pokemondb.com"} pokemondb.com
+      %p Encyclopedia and Pokédex entries indexed for more precision and breadth of data and information.
     .col-lg-6
-      %h4 Twitter Bootstrap-sass
-      %p Makes everything look nicer.
+      %h4 
+        %a{href: "https://github.com/twbs/bootstrap-sass"} Bootstrap/Sass
+      %p Makes the front end look a bit nicer.
 = haml :footer
