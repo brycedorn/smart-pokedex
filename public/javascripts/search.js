@@ -2,7 +2,7 @@
 function local_storage(num_items) {
 
   var index = lunr(function () {
-    this.field('api')
+    this.field('api', {boost: 20})
     this.field('wiki')
     this.ref('id')
   });
@@ -28,18 +28,14 @@ function local_storage(num_items) {
 $(document).ready(function() {
   // Pre-fetch for now
   index = prefetch();
+  // index = lunr.load(test)
 
   $("a#enter").click( function() {
-    var size = 10;
-    do_search(size);
+    do_search();
   });
   $("a#download").click( function() {
     var d = local_storage(10);
     $("textarea#data").val( JSON.stringify( d.toJSON() ) );
-  });
-  $("a#copy").zclip({
-    path:'http://davidwalsh.name/demo/ZeroClipboard.swf',
-    copy:function(){return $("textarea#data").val();}
   });
 });
 
@@ -49,12 +45,13 @@ function no_results() {
   setTimeout(function() {
     $("#noresult h3").css('color','rgba(0,0,0,0)');
   }, 1000);
+  $("#result").css('display','none');
   $('html, body').animate({
     scrollTop: $("body").offset().top
   }, 600);
 }
 
-// Fix this
+// Enter keypress
 $(document).on("keypress", "#search", function(e) {
   if (e.which == 13) {
     do_search();
@@ -62,6 +59,7 @@ $(document).on("keypress", "#search", function(e) {
   }
 });
 
+// Index
 function prefetch() {
   var originals = 151;
   var dev = 5;
@@ -76,15 +74,17 @@ function prefetch() {
 
 
 // Search function
-// Params : num_pokemon - the number of pokemon to add to lunr index
-function do_search(num_pokemon) {
+// Params : q - the query to search index for
+function do_search(q) {
 
   // Load locally serialized index
   // `test` is full lunr index, `sm` is partition of 30
   // var index = lunr.Index.load(sm);
 
   // Do the search
-  var query = $("#search").val();
+  var query;
+  if(q) query = q;
+  else query = $("#search").val();
 
   // If query exists
   if(query) {

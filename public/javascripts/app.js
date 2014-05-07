@@ -8,14 +8,16 @@ $(document).ready(function() {
 
   randomize_placeholder();
 
-  if (annyang && !jQuery.browser.mobile && false) {
-    enable_voice();
+  if (annyang && !jQuery.browser.mobile) {
+    // enable_voice();
   }
 });
 
 function enable_voice() {
   var commands = {
     'do a search': function() { $('#enter')[0].click(); }
+    // 'whats the pokemon that *query': do_search
+    // 'test': function() { console.log("test"); }
   };
 
   // Add our commands to annyang
