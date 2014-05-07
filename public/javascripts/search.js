@@ -1,10 +1,3 @@
-// Array of key/value pairs for ID of pokemon
-// poke_data = {"1": {"abilities": {"chloroph..."}}, ...
-
-// Array of wiki jargon for ID of pokemon
-// wiki_data = {"<a href="ehe">the pokemon</a>..."} , ...
-
-
 // Index data in lunr
 function local_storage(num_items) {
 
@@ -33,16 +26,15 @@ function local_storage(num_items) {
 
 // Button events
 $(document).ready(function() {
+  // Pre-fetch for now
+  index = prefetch();
+
   $("a#enter").click( function() {
-    do_search(10);
-  });
-  $("a#more").click( function() {
-    var size = 100;
+    var size = 10;
     do_search(size);
   });
   $("a#download").click( function() {
     var d = local_storage(10);
-    // $("h3#static").text( JSON.stringify( d.toJSON() ) );
     $("textarea#data").val( JSON.stringify( d.toJSON() ) );
   });
   $("a#copy").zclip({
@@ -51,18 +43,33 @@ $(document).ready(function() {
   });
 });
 
+// No results event
+function no_results() {
+  $("#noresult h3").css('color','rgba(0,0,0,0.5)');
+  setTimeout(function() {
+    $("#noresult h3").css('color','rgba(0,0,0,0)');
+  }, 1000);
+}
 
 // Fix this
-// $(document).keypress(function(e) {
-//   if(e.which == 13) {
-//     do_search();
-//   }
-// });
+$(document).on("keypress", "#search", function(e) {
+  if (e.which == 13) {
+    do_search();
+    return false;
+  }
+});
 
+function prefetch() {
+  var originals = 151;
+  var dev = 5;
 
-// Pre-fetch for now
-var index = local_storage(151);
-
+  if(apply_active_nav() == "") {
+    index = local_storage(dev);
+  } else {
+    index = local_storage(0);
+  }
+  return index;
+}
 
 
 // Search function
@@ -113,13 +120,18 @@ function do_search(num_pokemon) {
       $($("#ret_stats").find("td")[9]).text(pokemon.weight/10 + "kg");
 
       // Display runner-up stats
-      for(var k = 1; k < result.length; k++ ) {
+      for(var k = 1; k < 4; k++ ) {
         if(result[k]) {
+          $("#run_"+k).css('display','block');
           $("#run_"+k).find(".pokeimg img").attr('src','http://img.pokemondb.net/artwork/'+poke_data[result[k].ref].name.toLowerCase()+'.jpg');
           $("#run_"+k).find("p.name").text(poke_data[result[k].ref].name);
           $("#run_"+k).find("p.accuracy").text(result[k].score.toString().substring(0, 7)+" accuracy");
         }
+        else $("#run_"+k).css('display','none');
       }
-    } else alert('No results, try wording again!');  
-  } else alert('You need enter something to search for first!');
+      $('html, body').animate({
+        scrollTop: $("#result").offset().top
+      }, 600);
+    } else no_results();  
+  } else no_results();
 }

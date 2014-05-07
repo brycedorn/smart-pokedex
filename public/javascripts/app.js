@@ -35,6 +35,7 @@ function randomize_placeholder() {
 function apply_active_nav() {
   var url = document.URL;
   var nav = ['contact','data','about'];
+  var to = "";
   $.each(nav,function(i,val) { 
     var changed = false;
     $('li.active').removeClass('active');
@@ -42,10 +43,12 @@ function apply_active_nav() {
       $('li.active').removeClass('active');
       $("li."+nav[i]).addClass("active");
       changed = true;
+      to = nav[i];
       return false;
     }
     if(!changed) {
       $("li.home").addClass("active");
     }
   });
+  return to;
 }
