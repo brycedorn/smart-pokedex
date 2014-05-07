@@ -1,16 +1,14 @@
 .jumbotron
   #local
     %h1 lunrjs Data
+    %p Get the serialized json that lunr uses to index all data.
     %p
-      Get the serialized json that lunr uses to index all data.
       %a.btn.btn-lg.btn-danger#download Load
     %h5
       (Only loads 10 for now...)
     .row.clean
       .col-lg-12
         %textarea#data
-      / .col-lg-12
-      /   %h3#static
     %p
       %a.btn.btn-lg.btn-danger#copy Copy
 = haml :footer

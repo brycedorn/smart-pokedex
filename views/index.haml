@@ -1,55 +1,58 @@
 .jumbotron
+  / #loading
+  /   %img{src: "images/ajax-loader.gif" }
   #landing
     %h1 Smart Pokédex
     %p.lead
       %input.form-control#search{type: "search", placeholder: ""}
     %p
-      %a.btn.btn-lg.btn-danger#enter{href: "#result" } Search!
+      %a.btn.btn-lg.btn-danger#enter Search!
+  #noresult
+    %h3#caption No results, try again!
   #result
     %h3#caption Sounds like you meant...
     .row.clean
       .col-lg-6.col-md-6.col-sm-6
         .pokeimg
-          %img#ret_img{src: "http://img.pokemondb.net/artwork/bulbasaur.jpg" }
+          %img#ret_img
       .col-lg-6.col-md-6.col-sm-6
-        %h2#ret_name Bulbasaur
-        %p#ret_acc.accuracy 24.3% accuracy
+        %h2#ret_name
+        %p#ret_acc.accuracy
         %table.table.table-bordered#ret_stats
           %tr
             %td National №
-            %td 001
+            %td
           %tr
             %td Type
-            %td.types Grass / Poison
+            %td.types
           %tr
             %td HP
-            %td 10
+            %td
           %tr
             %td Height
-            %td 2′4″ (0.71m)
+            %td
           %tr
             %td Weight
-            %td 100lb
+            %td
     .row.clean#runnersup
-      %h3 Top 3 runners up
+      %h3 Runners up
       .col-lg-4.col-md-4.col-sm-4.col-xs-4#run_1
         .pokeimg
-          %img{src: "http://img.pokemondb.net/artwork/bulbasaur.jpg" }
-        %p.name First
-        %p.accuracy 10.6% accuracy
+          %img
+        %p.name
+        %p.accuracy
       .col-lg-4.col-md-4.col-sm-4.col-xs-4#run_2
         .pokeimg
-          %img{src: "http://img.pokemondb.net/artwork/bulbasaur.jpg" }
-        %p.name Second
-        %p.accuracy 3.7% accuracy
+          %img
+        %p.name
+        %p.accuracy
       .col-lg-4.col-md-4.col-sm-4.col-xs-4#run_3
         .pokeimg
-          %img{src: "http://img.pokemondb.net/artwork/bulbasaur.jpg" }
-        %p.name Third
-        %p.accuracy 0.3% accuracy
+          %img
+        %p.name
+        %p.accuracy
     #feedback
       %p 
         Was this horribly wrong? 
         %a{href: "/contact" } Please let us know!
-
 = haml :footer
