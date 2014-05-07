@@ -49,6 +49,9 @@ function no_results() {
   setTimeout(function() {
     $("#noresult h3").css('color','rgba(0,0,0,0)');
   }, 1000);
+  $('html, body').animate({
+    scrollTop: $("body").offset().top
+  }, 600);
 }
 
 // Fix this
@@ -64,7 +67,7 @@ function prefetch() {
   var dev = 5;
 
   if(apply_active_nav() == "") {
-    index = local_storage(dev);
+    index = local_storage(originals);
   } else {
     index = local_storage(0);
   }
