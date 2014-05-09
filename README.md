@@ -1,4 +1,4 @@
-# [Smart Pokédex](https://wiki.engr.illinois.edu/display/timan/Smart+Pokedex)
+# [Pokéyword](https://wiki.engr.illinois.edu/display/timan/Smart+Pokedex) (formerly Smart Pokédex)
 ### A final project for CS410, Text Information Systems.
 ###### _What's that weird looking one with the tongue again?_
 
