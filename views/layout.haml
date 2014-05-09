@@ -24,7 +24,7 @@
 
     / LOCAL
     %script{:type => "text/javascript", :src => "/data/data.min.js"}
-    / %script{:type => "text/javascript", :src => "/javascripts/app.min.js"}
+    %script{:type => "text/javascript", :src => "/javascripts/app.min.js"}
     / LOCAL
 
   %body
@@ -34,8 +34,8 @@
         %ul.nav.nav-pills.pull-right
           %li.home.active
             %a{href: "/"} Home
-          %li.data
-            %a{href: "/data"} Data
+          / %li.data
+          /   %a{href: "/data"} Data
           %li.about
             %a{href: "/about"} About
           %li.contact
