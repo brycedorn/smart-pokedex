@@ -8,5 +8,4 @@ test/bower_components
 .editorconfig
 .jshintrc
 .gitattributes
-data/*
-javascripts/*
+public/dev/*
