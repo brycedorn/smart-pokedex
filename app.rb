@@ -7,10 +7,6 @@ class App < Sinatra::Base
     haml :index
   end
 
-  get '/data' do
-    haml :localize
-  end
-
   get '/about' do
     haml :about
   end
