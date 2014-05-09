@@ -2,7 +2,7 @@
 %html.no-js
   %head
     %meta{charset: "utf-8"}
-    %title Smart Pokédex
+    %title Pokéyword
     %meta{content: "", name: "description"}
     %meta{content: "width=device-width", name: "viewport"}
     %link{:href=>"/stylesheets/application.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}
@@ -34,12 +34,10 @@
         %ul.nav.nav-pills.pull-right
           %li.home.active
             %a{href: "/"} Home
-          / %li.data
-          /   %a{href: "/data"} Data
           %li.about
             %a{href: "/about"} About
           %li.contact
             %a{href: "/contact"} Contact
-        %h3.text-muted Smart Pokédex
+        %h3.text-muted Pokéyword (formerly Smart Pokédex)
       = yield
       = haml :ga
